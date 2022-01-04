@@ -1,4 +1,5 @@
 # React Native Todo List
+![Mobile Screenshot](https://github.com/codythegreat/react-native-todo-list/blob/master/react-native-todo-list.png?raw=true)
 
 ## How to use
 
