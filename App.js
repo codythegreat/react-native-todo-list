@@ -103,9 +103,12 @@ const styles = StyleSheet.create({
     width: 120
   },
   themeWrapper_dark: {
+    marginTop: 25,
+    marginLeft: 25,
     padding: 10,
     borderRadius: 5,
-    backgroundColor: "#444"
+    backgroundColor: "#444",
+    width: 120
   },
   themeText_dark: {
     color: "white"
