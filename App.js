@@ -32,13 +32,13 @@ export default function App() {
 
       {/* Today's Tasks */}
 
+        <View style={styles.tasksWrapper}>
         <ScrollView
           contentContainerStyle={{
-            flexGrow: 1,
+            flexGrow: 1
           }}
           keyboardShouldPersistTaps='handled'
         >
-          <View style={styles.tasksWrapper}>
             <Text style={defaultTheme ? styles.sectionTitle : styles.sectionTitle_dark}>Today's Tasks</Text>
             <View style={styles.items}>
               {
@@ -56,15 +56,15 @@ export default function App() {
               {
                 taskItemsCompleted.map((item, index) => {
                   return (
-                    <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                    <TouchableOpacity>
                       <Task text={item} theme={defaultTheme} completed={true}></Task>
                     </TouchableOpacity>
                   );
                 })
               }
             </View>
-          </View>
         </ScrollView>
+        </View>
 
       {/* Create a new task section */}
       <KeyboardAvoidingView
@@ -95,9 +95,12 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   themeWrapper: {
+    marginTop: 25,
+    marginLeft: 25,
     padding: 10,
     borderRadius: 5,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    width: 120
   },
   themeWrapper_dark: {
     padding: 10,
@@ -110,6 +113,7 @@ const styles = StyleSheet.create({
   tasksWrapper: {
     paddingTop: 80,
     paddingHorizontal: 20,
+    flexGrow: 0,
   },
   sectionTitle: {
     margin: 10,
@@ -127,13 +131,15 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   createTaskWrapper: {
-    position: "absolute",
-    bottom: 60,
+    position: "fixed",
+    alignSelf: "flex-end",
+    bottom: 0,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    marginBottom: 15
+    marginBottom: 25,
+    marginTop: 25
   },
   input: {
     padding: 15,
